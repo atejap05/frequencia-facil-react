@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
+  const [pdfBuffer, setPdfBuffer] = useState("");
+  const url =
+    "https://localhost:8443/ctx/run/Frequencia_Facil_Backend/getFolhaPonto";
+
+  const clickHandler = e => {};
+  useEffect(() => {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const pdfBase64 = `data:application/pdf;base64,${data["pdf_base64"]}`;
+        setPdfBuffer(pdfBase64);
+      });
+  }, []);
+  console.log("oi");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <iframe src={pdfBuffer} title="folha-de-ponto"></iframe>
+      <button onClick={clickHandler}>Botao</button>
     </div>
   );
 }
