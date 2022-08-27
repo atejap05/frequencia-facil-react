@@ -1,1 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@400;700&family=Rubik:wght@400;500;600;700&display=swap");
 /* Resets do Root */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+}

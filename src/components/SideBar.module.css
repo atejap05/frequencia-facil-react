@@ -1,0 +1,20 @@
+.aside-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.aside-header {
+  flex-grow: 1;
+}
+
+.aside-main {
+  flex-grow: 3;
+  margin-top: calc(50% - 4rem);
+  width: 50%;
+}
+
+.aside-footer {
+  flex-grow: 1;
+}

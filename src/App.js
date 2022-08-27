@@ -2,15 +2,15 @@ import { useState } from "react";
 import IframePDF from "./components/IframePDF";
 import SideBar from "./components/SideBar";
 
-import "./App.css";
+import classes from "./App.module.css";
 
 function App() {
   const [pdfDataBuffer, setPdfDataBuffer] = useState("");
 
   return (
-    <div>
-      <IframePDF src={pdfDataBuffer} />
+    <div className={classes["main-container"]}>
       <SideBar onClickFetch={dataBuffer => setPdfDataBuffer(dataBuffer)} />
+      <IframePDF src={pdfDataBuffer} />
     </div>
   );
 }
