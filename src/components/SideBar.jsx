@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import classes from "./SideBar.module.css";
 
 const SideBar = props => {
@@ -23,6 +24,7 @@ const SideBar = props => {
         </h1>
       </header>
       <main className={classes["aside-main"]}>
+        <input type="month" name="" id="" />
         <button onClick={clickHandler}>Clique</button>
       </main>
       <footer className={classes["aside-footer"]}>Footer</footer>

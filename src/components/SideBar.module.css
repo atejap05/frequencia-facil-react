@@ -3,6 +3,7 @@
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
+  /* background-color: var(--color-dark--1); */
 }
 
 .aside-header {
@@ -11,8 +12,9 @@
 
 .aside-main {
   flex-grow: 3;
-  margin-top: calc(50% - 4rem);
-  width: 50%;
+  margin-top: calc(25% - 4rem);
+  width: 70%;
+  background-color: var(--color-dark--2);
 }
 
 .aside-footer {
