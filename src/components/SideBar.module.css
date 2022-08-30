@@ -3,18 +3,42 @@
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
+  padding-top: 1rem;
   /* background-color: var(--color-dark--1); */
 }
 
 .aside-header {
   flex-grow: 1;
+  font-size: 1rem;
+  color: var(--color-brand--2);
 }
 
 .aside-main {
   flex-grow: 3;
+  padding: 0.8rem 0.6rem;
   margin-top: calc(25% - 4rem);
-  width: 70%;
+  width: 85%;
+  height: 10%;
   background-color: var(--color-dark--2);
+  text-align: center;
+}
+
+fieldset {
+  color: var(--color-light--2);
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+  border: 1px solid var(--color-brand--2);
+  border-radius: 8px;
+  padding: 0.8rem 0.6rem;
+  margin-top: 1rem;
+  margin-bottom: 1.4rem;
+  text-align: center;
+}
+
+.aside-main-form input {
+  width: 80%;
+  border: none;
+  margin-bottom: 1.2rem;
 }
 
 .aside-footer {
