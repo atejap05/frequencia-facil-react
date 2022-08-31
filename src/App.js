@@ -1,7 +1,6 @@
 import { useState } from "react";
 import IframePDF from "./components/IframePDF";
 import SideBar from "./components/SideBar";
-
 import classes from "./App.module.css";
 import TableComponent from "./components/TableComponent/TableComponent";
 

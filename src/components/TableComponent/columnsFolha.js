@@ -1,5 +1,5 @@
 export const GROUPED_COLUMNS = [
-  { Header: "dia", accessor: "dia" },
+  { Header: "Dia", accessor: "dia" },
   {
     Header: "Manhã",
     columns: [
