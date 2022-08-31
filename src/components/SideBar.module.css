@@ -10,13 +10,19 @@
 .aside-header {
   flex-grow: 1;
   font-size: 1rem;
+  text-align: center;
   color: var(--color-brand--2);
+}
+
+.aside-header--logo {
+  font-size: 2rem;
+  display: inline-block;
 }
 
 .aside-main {
   flex-grow: 3;
   padding: 0.8rem 0.6rem;
-  margin-top: calc(25% - 4rem);
+  /* margin-top: calc(25% - 4rem); */
   width: 85%;
   height: 10%;
   background-color: var(--color-dark--2);
@@ -37,6 +43,7 @@ fieldset {
 
 .aside-main-form input {
   width: 80%;
+  height: 1.6rem;
   border: none;
   margin-bottom: 1.2rem;
 }
