@@ -45,6 +45,8 @@ const SideBar = props => {
               ref={selectedDateRef}
               type="month"
               id="input-date"
+              //TODO: implementar metodo (new Date) para pegar mes anterior do corrente ano como defalut value
+              defaultValue={"2022-06"}
               required
             />
             <button type="submit">Carregar Frequência</button>

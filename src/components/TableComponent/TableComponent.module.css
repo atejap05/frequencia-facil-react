@@ -14,31 +14,48 @@
 .table-result td,
 .table-result th {
   border: 1px solid #ddd;
-  padding: 0.6em;
 }
 
 .table-result tr {
-  font-size: 1em;
   text-align: center;
-}
-
-.table-result tr:nth-child(even) {
   background-color: #ffffff;
-}
-
-.table-result tr:nth-child(odd) {
-  background-color: #f2e9d8;
-}
-
-.table-result tr:hover {
-  background-color: #ddd;
 }
 
 .table-result th {
   font-size: 1.2em;
   padding-top: 0.6em;
   padding-bottom: 0.4rem;
+  padding-left: 1em;
+  padding-right: 1em;
   text-align: center;
   background-color: #04aa6d;
-  color: white;
+  color: #fff;
+}
+
+/*********** Inputs **************/
+input {
+  /* font-size: 1.4em; */
+  height: 1.4em;
+  border: none;
+  text-align: center;
+  padding: 0.2em 0.5em;
+}
+
+/* Hide icon */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  /* Chrome, Safari, Edge, Opera */
+  -webkit-appearance: none;
+  margin: 0;
+  /* Firefox */
+  -moz-appearance: textfield;
+}
+
+input[type="number"] {
+  max-width: 3em;
+}
+
+/* Hide Clock icon */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
 }
