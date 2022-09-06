@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { GiNotebook } from "react-icons/gi";
+import getCurrentDate from "../Helpers/helpers";
 import classes from "./SideBar.module.css";
 
 const SideBar = props => {
@@ -26,6 +27,7 @@ const SideBar = props => {
       console.log(e);
     }
   };
+
   console.log(isFetching);
   return (
     <aside className={classes["aside-container"]}>
@@ -45,14 +47,18 @@ const SideBar = props => {
               ref={selectedDateRef}
               type="month"
               id="input-date"
-              //TODO: implementar metodo (new Date) para pegar mes anterior do corrente ano como defalut value
-              defaultValue={"2022-06"}
+              defaultValue={`${getCurrentDate().year}-${
+                getCurrentDate().month
+              }`}
               required
             />
             <button type="submit">Carregar Frequência</button>
           </fieldset>
         </form>
         <button type="button">Preencher</button>
+        <button onClick={props.onClickGerar} type="button">
+          Gerar
+        </button>
       </main>
       <footer className={classes["aside-footer"]}>Footer</footer>
     </aside>

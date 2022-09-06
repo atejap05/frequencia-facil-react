@@ -1,12 +1,18 @@
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import { useTable } from "react-table";
 import classes from "./TableComponent.module.css";
 import DUMMY_DATA from "./DUMMY_DATA.json";
 import { GROUPED_COLUMNS } from "./columnsFolha";
+const dadosFolha = {};
 
-const TableComponent = () => {
+const TableComponent = props => {
   const columns = useMemo(() => GROUPED_COLUMNS, []);
   const data = useMemo(() => DUMMY_DATA, []);
+  const dadosF = useMemo(() => dadosFolha, []);
+
+  useEffect(() => {
+    props.onClickGerar(dadosF);
+  }, [props, dadosF]);
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data }); // react-table instance
@@ -27,8 +33,9 @@ const TableComponent = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
+          {rows.map((row, index) => {
             prepareRow(row);
+            dadosFolha[index] = row.values;
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => {

@@ -1,6 +1,21 @@
+import React, { useRef } from "react";
+
 const SetInputTime = props => {
+  const inputTimeRef = useRef();
   //TODO: implementar onChange handler func para pegar valor do input
-  return <input type="time" defaultValue={props.value} />;
+  const onChangeHandler = e => {
+    console.log(e.target);
+    console.log(inputTimeRef);
+  };
+
+  return (
+    <input
+      ref={inputTimeRef}
+      onChange={onChangeHandler}
+      type="time"
+      defaultValue={props.value}
+    />
+  );
 };
 
 const SetInputNumber = props => {
