@@ -1,0 +1,16 @@
+// File for really low level conf --> body, html resets etc
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // this defines what 1rem is. It is not about typography itself
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

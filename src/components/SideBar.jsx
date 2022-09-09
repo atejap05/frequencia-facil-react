@@ -22,6 +22,7 @@ const SideBar = props => {
       const response = await fetch(url1);
       const data = await response.json();
       setIsFetching(false);
+      console.log(data["data"]);
       props.onClickFetch(data["pdf_base64"]);
     } catch (e) {
       console.log(e);

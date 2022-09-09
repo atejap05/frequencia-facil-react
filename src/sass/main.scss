@@ -1,0 +1,16 @@
+// 7 (folders) x 1 (main file) architecture
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "bases/animations";
+@import "bases/base";
+@import "bases/typography";
+@import "bases/utilities";
+
+@import "components/button";
+
+@import "layouts/_header";
+@import "layouts/_grid";
+
+@import "pages/home";
