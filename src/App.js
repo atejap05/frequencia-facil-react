@@ -23,7 +23,7 @@ function App() {
           onClickGerar={onClickGerarHandler}
           onClickFetch={dataBuffer => setPdfDataBuffer(dataBuffer)}
         />
-        {true ? (
+        {false ? (
           <IframePDF src={pdfDataBuffer} />
         ) : (
           <TableComponent onClickGerar={dadosObj => setDadosFolha(dadosObj)} />

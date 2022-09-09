@@ -1,4 +1,4 @@
-import classes from "./FillUpForm.module.css";
+import classes from "../css/styles.module.css";
 
 import React from "react";
 

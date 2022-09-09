@@ -1,6 +1,6 @@
 import { useMemo, useEffect } from "react";
 import { useTable } from "react-table";
-import classes from "./TableComponent.module.css";
+import classes from "../../css/styles.module.css";
 import DUMMY_DATA from "./DUMMY_DATA.json";
 import { GROUPED_COLUMNS } from "./columnsFolha";
 const dadosFolha = {};
