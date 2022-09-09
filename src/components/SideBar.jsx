@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { GiNotebook } from "react-icons/gi";
 import getCurrentDate from "../Helpers/helpers";
-import classes from "./SideBar.module.css";
+import classes from "../css/styles.module.css";
 
 const SideBar = props => {
   const [isFetching, setIsFetching] = useState(false);
@@ -31,7 +31,7 @@ const SideBar = props => {
 
   console.log(isFetching);
   return (
-    <aside className={classes["aside-container"]}>
+    <aside className={classes["aside"]}>
       <header className={classes["aside-header"]}>
         <span className={classes["aside-header--logo"]}>
           <GiNotebook />
@@ -40,11 +40,12 @@ const SideBar = props => {
       </header>
       <main className={classes["aside-main"]}>
         <form onSubmit={clickHandler} className={classes["aside-main-form"]}>
-          <fieldset>
+          <fieldset className={classes["aside-main-fieldset"]}>
             <legend>
               <label htmlFor="input-date">Selecione o Período(mês/ano)</label>
             </legend>
             <input
+              className={classes["aside-main-fieldset--input"]}
               ref={selectedDateRef}
               type="month"
               id="input-date"

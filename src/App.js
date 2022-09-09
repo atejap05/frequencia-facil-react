@@ -2,7 +2,7 @@ import { useState } from "react";
 import FolhaContext from "./context/folhaContext";
 import IframePDF from "./components/IframePDF";
 import SideBar from "./components/SideBar";
-import classes from "./App.module.css";
+import classes from "./css/styles.module.css";
 import TableComponent from "./components/TableComponent/TableComponent";
 
 function App() {

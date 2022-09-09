@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@400;700&family=Rubik:wght@400;500;600;700&display=swap");
+
 // 7 (folders) x 1 (main file) architecture
 @import "abstracts/functions";
 @import "abstracts/mixins";
@@ -9,6 +11,8 @@
 @import "bases/utilities";
 
 @import "components/button";
+@import "components/side_bar";
+@import "components/iframe";
 
 @import "layouts/_header";
 @import "layouts/_grid";

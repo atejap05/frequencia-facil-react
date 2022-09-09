@@ -1,5 +1,5 @@
-import classes from "./IframePDF.module.css";
 import React from "react";
+import classes from "../css/styles.module.css";
 
 const IframePDF = props => {
   return (
