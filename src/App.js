@@ -4,16 +4,16 @@ import IframePDF from "./components/IframePDF";
 import SideBar from "./components/SideBar";
 import classes from "./css/styles.module.css";
 import TableComponent from "./components/TableComponent/TableComponent";
+import gerarPDF from "./Helpers/pdfMake/geraPDF";
+import DUMMY_DATA from "./assets/dev_data/DUMMY_DATA.json";
 
 function App() {
   const [pdfDataBuffer, setPdfDataBuffer] = useState("");
   const [dadosFolha, setDadosFolha] = useState({});
 
   const onClickGerarHandler = () => {
-    console.log(
-      "cliquei em gerar. pegar os dados para escrever no pdf com react pdf"
-    );
-    console.log(dadosFolha);
+    gerarPDF(DUMMY_DATA);
+    // console.log(dadosFolha);
   };
 
   return (
