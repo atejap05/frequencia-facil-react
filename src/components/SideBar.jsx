@@ -7,23 +7,22 @@ const SideBar = props => {
   const [isFetching, setIsFetching] = useState(false);
   const selectedDateRef = useRef();
 
-  // const url =
-  //   "https://localhost:8443/ctx/run/Frequencia_Facil_Backend/getUltimaFolhaPonto";
-
-  const clickHandler = async e => {
-    e.preventDefault();
+  const getUrlToFetch = () => {
     const dateString = selectedDateRef.current.value;
     const ano = dateString.split("-")[0];
     const mes = dateString.split("-")[1];
-    const url1 = `https://localhost:8443/ctx/run/Frequencia_Facil_Backend/getFolhaPontoAnoMes?ano=${ano}&mes=${mes}`;
+    return `https://localhost:8443/ctx/run/frequencia_facil/getFolhaPontoAnoMes?ano=${ano}&mes=${mes}`;
+  };
 
+  const onClickCarregarHandler = async e => {
+    e.preventDefault();
+    const url = getUrlToFetch();
     try {
       setIsFetching(true);
-      const response = await fetch(url1);
+      const response = await fetch(url);
       const data = await response.json();
       setIsFetching(false);
-      console.log(data["data"]);
-      props.onClickFetch(data["pdf_base64"]);
+      props.onClickFetch(data);
     } catch (e) {
       console.log(e);
     }
@@ -39,7 +38,10 @@ const SideBar = props => {
         <h1 className={classes["aside-header--text"]}>Frequência Fácil</h1>
       </header>
       <main className={classes["aside-main"]}>
-        <form onSubmit={clickHandler} className={classes["aside-main-form"]}>
+        <form
+          onSubmit={onClickCarregarHandler}
+          className={classes["aside-main-form"]}
+        >
           <fieldset className={classes["aside-main-fieldset"]}>
             <legend>
               <label htmlFor="input-date">Selecione o Período(mês/ano)</label>
@@ -57,7 +59,9 @@ const SideBar = props => {
             <button type="submit">Carregar Frequência</button>
           </fieldset>
         </form>
-        <button type="button">Preencher</button>
+        <button onClick={props.onClickPreencher} type="button">
+          Preencher
+        </button>
         <button onClick={props.onClickGerar} type="button">
           Gerar
         </button>
