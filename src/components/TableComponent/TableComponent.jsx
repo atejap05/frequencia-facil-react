@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from "react";
+import { useMemo } from "react";
 import { useTable } from "react-table";
 import classes from "../../css/styles.module.css";
 // import DUMMY_DATA from "./DUMMY_DATA.json";
@@ -6,6 +6,8 @@ import { GROUPED_COLUMNS } from "./columnsFolha";
 
 const TableComponent = props => {
   const columns = useMemo(() => GROUPED_COLUMNS, []);
+  //TODO: ao clicar em preencher, a tabela é preenchida com os dados iniciais da folha de ponto
+  //TODO: Apos preencher, os dados recebidos nos inputs devem ser enviados para renderizacao da folha pdf no pdfmake
   const data = useMemo(() => props.initialDataBody, [props]);
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
@@ -33,7 +35,10 @@ const TableComponent = props => {
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => {
                   return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    // TODO: set dataset com o dia para montagem do objeto
+                    <td data-dia={index + 1} {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </td>
                   );
                 })}
               </tr>

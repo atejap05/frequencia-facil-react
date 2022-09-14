@@ -1,0 +1,33 @@
+.table-container {
+  width: 75%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.table-result {
+  width: 100%;
+  font-family: Nunito, sans-serif;
+  border-collapse: collapse;
+  overflow: auto;
+
+  & td,
+  & th {
+    border: 1px solid #ddd;
+  }
+
+  & tr {
+    text-align: center;
+    background-color: #ffffff;
+  }
+
+  & th {
+    font-size: 1.2em;
+    padding-top: 0.6em;
+    padding-bottom: 0.4rem;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+    background-color: #04aa6d;
+    color: #fff;
+  }
+}

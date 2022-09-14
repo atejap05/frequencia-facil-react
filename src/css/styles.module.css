@@ -71,10 +71,7 @@ body {
   width: 100%;
   font-family: Nunito, sans-serif;
   border-collapse: collapse;
-  overflow: auto;
-  /*********** Inputs **************/
-  /* Hide icon */
-  /* Hide Clock icon */ }
+  overflow: auto; }
   .table-result td,
   .table-result th {
     border: 1px solid #ddd; }
@@ -90,22 +87,28 @@ body {
     text-align: center;
     background-color: #04aa6d;
     color: #fff; }
-  .table-result input {
-    height: 1.4em;
-    border: none;
-    text-align: center;
-    padding: 0.2em 0.5em; }
-  .table-result input[type="number"]::-webkit-outer-spin-button,
-  .table-result input[type="number"]::-webkit-inner-spin-button {
-    /* Chrome, Safari, Edge, Opera */
-    -webkit-appearance: none;
-    margin: 0;
-    /* Firefox */
-    -moz-appearance: textfield; }
-  .table-result input[type="number"] {
-    max-width: 3em; }
-  .table-result input[type="time"]::-webkit-calendar-picker-indicator {
-    display: none; }
+
+input {
+  height: 1.4em;
+  border: none;
+  text-align: center;
+  padding: 0.2em 0.5em; }
+
+/* Hide icon */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  /* Chrome, Safari, Edge, Opera */
+  -webkit-appearance: none;
+  margin: 0;
+  /* Firefox */
+  -moz-appearance: textfield; }
+
+input[type="number"] {
+  max-width: 3em; }
+
+/* Hide Clock icon */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none; }
 
 .main-container {
   width: 95vw;
