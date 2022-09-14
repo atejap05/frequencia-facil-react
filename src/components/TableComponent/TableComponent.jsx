@@ -8,7 +8,7 @@ const TableComponent = props => {
   const columns = useMemo(() => GROUPED_COLUMNS, []);
   //TODO: ao clicar em preencher, a tabela é preenchida com os dados iniciais da folha de ponto
   //TODO: Apos preencher, os dados recebidos nos inputs devem ser enviados para renderizacao da folha pdf no pdfmake
-  const data = useMemo(() => props.initialDataBody, [props]);
+  const data = useMemo(() => Object.values(props.initialDataBody), [props]);
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data }); // react-table instance

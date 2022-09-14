@@ -1,9 +1,3 @@
-const getLastMonth = () => {
-  const now = new Date();
-  return {
-    year: String(now.getFullYear()),
-    month: String(now.getMonth() + 1).padStart(2, "0"),
-  };
-};
+const data = require("./src/components/TableComponent/DUMMY_DATA.json");
 
-console.log(getLastMonth());
+console.log(Object.values(data));
