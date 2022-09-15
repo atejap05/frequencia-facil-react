@@ -14,6 +14,8 @@ export const SetInput = props => {
     ctx.folhaData.body[+dia - 1][inputName] = value;
   };
 
+  const isWeekendOrHolidays = typeof props.value === "string" ? true : false;
+
   const inputType =
     props.type === "time" ? (
       <input
@@ -22,6 +24,7 @@ export const SetInput = props => {
         ref={inputRef}
         onChange={onChangeHandler}
         defaultValue={props.value}
+        disabled={isWeekendOrHolidays}
       />
     ) : (
       <input
@@ -30,6 +33,7 @@ export const SetInput = props => {
         ref={inputRef}
         onChange={onChangeHandler}
         defaultValue={props.value}
+        disabled={isWeekendOrHolidays}
       />
     );
 
