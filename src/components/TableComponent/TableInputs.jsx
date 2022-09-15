@@ -10,19 +10,14 @@ export const SetInput = props => {
     const dia = e.target.parentNode.dataset["dia"];
     const value = inputRef.current.value;
     const inputName = props.name;
-
-    ctx.bodyData[+dia - 1][inputName] = value;
-
-    console.log(ctx.bodyData);
+    // atualiza contexto
+    ctx.folhaData.body[+dia - 1][inputName] = value;
   };
-
-  //TODO: Implementar onSalvar || onGerar
-
-  // console.log(state);
 
   const inputType =
     props.type === "time" ? (
       <input
+        className={classes["input-time"]}
         type="time"
         ref={inputRef}
         onChange={onChangeHandler}
@@ -31,6 +26,7 @@ export const SetInput = props => {
     ) : (
       <input
         type="text"
+        className={classes["input-text"]}
         ref={inputRef}
         onChange={onChangeHandler}
         defaultValue={props.value}

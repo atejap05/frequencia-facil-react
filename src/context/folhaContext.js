@@ -1,8 +1,8 @@
 import React from "react";
 
 const FolhaContext = React.createContext({
-  bodyData: {},
-  gerarFolha: null,
+  folhaData: {}, // body and head
+  gerarFolha: false,
 });
 
 export default FolhaContext;

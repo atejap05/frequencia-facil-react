@@ -1,4 +1,4 @@
-const getCurrentDate = () => {
+export const getCurrentDate = () => {
   const now = new Date();
   return {
     year: String(now.getFullYear()),
@@ -6,4 +6,11 @@ const getCurrentDate = () => {
   };
 };
 
-export default getCurrentDate;
+export const getUrlToFetch = selectedData => {
+  /**
+   * selectedData string no formato YYYY-MM
+   */
+  const ano = selectedData.split("-")[0];
+  const mes = selectedData.split("-")[1];
+  return `https://localhost:8443/ctx/run/frequencia_facil/getFolhaPontoAnoMes?ano=${ano}&mes=${mes}`;
+};

@@ -1,34 +1,42 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import FolhaContext from "../context/folhaContext.js";
 import { GiNotebook } from "react-icons/gi";
-import getCurrentDate from "../Helpers/helpers";
+import { getCurrentDate, getUrlToFetch } from "../Helpers/helpers";
 import classes from "../css/styles.module.css";
+import gerarPDF from "../Helpers/pdfMake/geraPDF";
 
 const SideBar = props => {
+  const ctx = useContext(FolhaContext);
   const [isFetching, setIsFetching] = useState(false);
   const selectedDateRef = useRef();
 
-  const getUrlToFetch = () => {
-    const dateString = selectedDateRef.current.value;
-    const ano = dateString.split("-")[0];
-    const mes = dateString.split("-")[1];
-    return `https://localhost:8443/ctx/run/frequencia_facil/getFolhaPontoAnoMes?ano=${ano}&mes=${mes}`;
-  };
-
+  /**** ROTINA FETCH DADOS DA FOLHA ****/
   const onClickCarregarHandler = async e => {
     e.preventDefault();
-    const url = getUrlToFetch();
+    setIsFetching(true);
+    const selectedDateString = selectedDateRef.current.value;
+    const url = getUrlToFetch(selectedDateString);
     try {
-      setIsFetching(true);
       const response = await fetch(url);
       const data = await response.json();
-      setIsFetching(false);
       props.onClickFetch(data);
+      setIsFetching(false);
     } catch (e) {
+      //TODO: implementar modal de erro ao fazer o fetch
       console.log(e);
+      setIsFetching(false);
     }
   };
 
+  //TODO: Implementar onSalvar || onGerar
+  //TODO: implementar loading screen
   console.log(isFetching);
+
+  /**** ROTINA GERAR PDF ****/
+  const gerarPdfHandler = () => {
+    gerarPDF(ctx.folhaData);
+  };
+
   return (
     <aside className={classes["aside"]}>
       <header className={classes["aside-header"]}>
@@ -62,7 +70,7 @@ const SideBar = props => {
         <button onClick={props.onClickPreencher} type="button">
           Preencher
         </button>
-        <button onClick={props.onClickGerar} type="button">
+        <button onClick={gerarPdfHandler} type="button">
           Gerar
         </button>
       </main>
