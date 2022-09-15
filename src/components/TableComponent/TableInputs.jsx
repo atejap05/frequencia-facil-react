@@ -10,7 +10,7 @@ export const SetInput = props => {
     const dia = e.target.parentNode.dataset["dia"];
     const value = inputRef.current.value;
     const inputName = props.name;
-    // atualiza contexto
+    // update context
     ctx.folhaData.body[+dia - 1][inputName] = value;
   };
 
@@ -21,6 +21,7 @@ export const SetInput = props => {
       <input
         className={`${classes["input"]} ${classes["input-time"]}`}
         type="time"
+        min=""
         ref={inputRef}
         onChange={onChangeHandler}
         defaultValue={props.value}
@@ -29,6 +30,7 @@ export const SetInput = props => {
     ) : (
       <input
         type="text"
+        maxLength={40}
         className={`${classes["input"]} ${classes["input-text"]}`}
         ref={inputRef}
         onChange={onChangeHandler}

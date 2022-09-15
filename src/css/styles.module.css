@@ -72,16 +72,15 @@ body {
   font-family: Nunito, sans-serif;
   border-collapse: collapse;
   overflow: auto; }
-  .table-result td,
-  .table-result th {
-    border: 1px solid #ddd; }
+  .table-result td {
+    border: 1px solid #ccc; }
   .table-result tr {
     text-align: center;
     background-color: #ffffff; }
   .table-result th {
     font-size: 1.2em;
     padding-top: 0.6em;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.6rem;
     text-align: center;
     background-color: #04aa6d;
     color: #fff; }

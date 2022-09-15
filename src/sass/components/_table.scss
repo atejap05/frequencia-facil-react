@@ -10,9 +10,8 @@
   border-collapse: collapse;
   overflow: auto;
 
-  & td,
-  & th {
-    border: 1px solid #ddd;
+  & td {
+    border: 1px solid #ccc;
   }
 
   & tr {
@@ -23,7 +22,7 @@
   & th {
     font-size: 1.2em;
     padding-top: 0.6em;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.6rem;
     text-align: center;
     background-color: #04aa6d;
     color: #fff;
