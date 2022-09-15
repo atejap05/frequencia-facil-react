@@ -33,8 +33,8 @@ function App() {
   });
 
   const onClickGerarHandler = () => {
-    gerarPDF(DUMMY_DATA);
-    // console.log(dadosFolha);
+    // gerarPDF(DUMMY_DATA);
+    // console.log(state.initialData);
   };
 
   return (
@@ -48,7 +48,7 @@ function App() {
             dispatch({ type: "preencher", payload: true })
           }
         />
-        {state.showTable ? (
+        {true ? (
           <TableComponent initialDataBody={state.initialData.body} />
         ) : (
           <IframePDF src={state["pdf_base64"]} />
