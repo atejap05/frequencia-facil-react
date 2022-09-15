@@ -12,5 +12,7 @@ export const getUrlToFetch = selectedData => {
    */
   const ano = selectedData.split("-")[0];
   const mes = selectedData.split("-")[1];
-  return `https://localhost:8443/ctx/run/frequencia_facil/getFolhaPontoAnoMes?ano=${ano}&mes=${mes}`;
+
+  // TODO: encerra o contexto a cada chamada 'ctx/once'
+  return `https://localhost:8443/ctx/once/frequencia_facil/getFolhaPontoAnoMes?ano=${ano}&mes=${mes}`;
 };

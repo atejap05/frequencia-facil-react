@@ -34,6 +34,7 @@ const SideBar = props => {
 
   /**** ROTINA GERAR PDF ****/
   const gerarPdfHandler = () => {
+    console.log(ctx.folhaData);
     gerarPDF(ctx.folhaData);
   };
 

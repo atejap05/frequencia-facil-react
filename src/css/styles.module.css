@@ -82,39 +82,27 @@ body {
     font-size: 1.2em;
     padding-top: 0.6em;
     padding-bottom: 0.4rem;
-    padding-left: 1em;
-    padding-right: 1em;
     text-align: center;
     background-color: #04aa6d;
     color: #fff; }
 
-input {
+.input {
   height: 1.4em;
   border: none;
   text-align: center;
   padding: 0.2em 0.5em; }
-
-/* Hide icon */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  /* Chrome, Safari, Edge, Opera */
-  -webkit-appearance: none;
-  margin: 0;
-  /* Firefox */
-  -moz-appearance: textfield; }
-
-input[type="number"] {
-  max-width: 3em; }
-
-/* Hide Clock icon */
-input[type="time"]::-webkit-calendar-picker-indicator {
-  display: none; }
+  .input-time::-webkit-calendar-picker-indicator {
+    display: none; }
+  .input-text {
+    width: 95%; }
+  .input-time {
+    width: 85%; }
 
 .main-container {
   width: 95vw;
-  height: 87vh;
+  height: 92vh;
   margin: 2rem auto;
   display: flex;
   justify-content: stretch;
   background-color: #2d3439;
-  box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.35); }
+  box-shadow: 0 0 1.4rem rgba(0, 0, 0, 0.35); }

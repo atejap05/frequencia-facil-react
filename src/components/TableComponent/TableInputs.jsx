@@ -17,7 +17,7 @@ export const SetInput = props => {
   const inputType =
     props.type === "time" ? (
       <input
-        className={classes["input-time"]}
+        className={`${classes["input"]} ${classes["input-time"]}`}
         type="time"
         ref={inputRef}
         onChange={onChangeHandler}
@@ -26,7 +26,7 @@ export const SetInput = props => {
     ) : (
       <input
         type="text"
-        className={classes["input-text"]}
+        className={`${classes["input"]} ${classes["input-text"]}`}
         ref={inputRef}
         onChange={onChangeHandler}
         defaultValue={props.value}
