@@ -1,7 +1,10 @@
 import { useState, useRef, useContext } from "react";
 import LoadingScreem from "../components/UI/LoadingScreem";
+import Button from "../components/UI/Button";
 import FolhaContext from "../context/folhaContext.js";
 import { GiNotebook } from "react-icons/gi";
+import { FaFilePdf } from "react-icons/fa";
+import { MdSearch, MdEdit } from "react-icons/md";
 import { getCurrentDate, getUrlToFetch } from "../Helpers/helpers";
 import classes from "../css/styles.module.css";
 import gerarPDF from "../Helpers/pdfMake/geraPDF";
@@ -58,15 +61,35 @@ const SideBar = props => {
                 defaultValue={getCurrentDate()}
                 required
               />
-              <button type="submit">Carregar Frequência</button>
+              <Button className={classes["button--buscar"]} type={"submit"}>
+                <span>
+                  <MdSearch />
+                </span>{" "}
+                Buscar
+              </Button>
             </fieldset>
           </form>
-          <button onClick={props.onClickPreencher} type="button">
-            Preencher
-          </button>
-          <button onClick={() => gerarPDF(ctx.folhaData)} type="button">
+          <Button
+            className={classes["button--gerar"]}
+            type={"button"}
+            onClick={() => gerarPDF(ctx.folhaData)}
+          >
+            {" "}
+            <span>
+              <FaFilePdf />
+            </span>{" "}
             Gerar
-          </button>
+          </Button>
+          <Button
+            className={classes["button--preencher"]}
+            type={"button"}
+            onClick={props.onClickPreencher}
+          >
+            <span>
+              <MdEdit />
+            </span>
+            Preencher
+          </Button>
         </main>
         <footer className={classes["aside-footer"]}>Footer</footer>
       </aside>
