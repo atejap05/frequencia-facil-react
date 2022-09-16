@@ -30,18 +30,10 @@ const SideBar = props => {
   };
 
   //TODO: Implementar onSalvar || onGerar
-  //TODO: implementar loading screen
-  console.log(isFetching);
-
-  /**** ROTINA GERAR PDF ****/
-  const gerarPdfHandler = () => {
-    console.log(ctx.folhaData);
-    gerarPDF(ctx.folhaData);
-  };
 
   return (
     <>
-      {true && <LoadingScreem />}
+      {isFetching && <LoadingScreem />}
       <aside className={classes["aside"]}>
         <header className={classes["aside-header"]}>
           <span className={classes["aside-header--logo"]}>
@@ -63,9 +55,7 @@ const SideBar = props => {
                 ref={selectedDateRef}
                 type="month"
                 id="input-date"
-                defaultValue={`${getCurrentDate().year}-${
-                  getCurrentDate().month
-                }`}
+                defaultValue={getCurrentDate()}
                 required
               />
               <button type="submit">Carregar Frequência</button>
@@ -74,7 +64,7 @@ const SideBar = props => {
           <button onClick={props.onClickPreencher} type="button">
             Preencher
           </button>
-          <button onClick={gerarPdfHandler} type="button">
+          <button onClick={() => gerarPDF(ctx.folhaData)} type="button">
             Gerar
           </button>
         </main>

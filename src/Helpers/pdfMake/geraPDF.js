@@ -7,7 +7,7 @@ import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
-const Settings = new SETTINGS();
+const settings = new SETTINGS();
 
 pdfMake.fonts = {
   LiberationSerif: {
@@ -21,62 +21,13 @@ pdfMake.fonts = {
 const geraPDF = folhaObj => {
   const { head, body } = folhaObj;
 
-  const bodyRows = body.map(row => {
-    return [
-      {
-        text: String(row.dia).padStart(2, "0"),
-        fontSize: Settings.fontSize.font_10,
-        alignment: "center",
-      },
-      {
-        text: row.entradaManha,
-        fontSize: Settings.fontSize.font_10,
-        alignment: "center",
-      },
-      {
-        text: row.saidaManha,
-        fontSize: Settings.fontSize.font_10,
-        alignment: "center",
-      },
-      {
-        text: row.entradaTarde,
-        fontSize: Settings.fontSize.font_10,
-        alignment: "center",
-      },
-      {
-        text: row.saidaTarde,
-        fontSize: Settings.fontSize.font_10,
-        alignment: "center",
-      },
-      {
-        text: row.assinaturaOcorrencia,
-        fontSize: Settings.fontSize.font_10,
-        alignment: "center",
-      },
-      {
-        text: row.horas,
-        fontSize: Settings.fontSize.font_10,
-        alignment: "center",
-      },
-      {
-        text: row.compensacao,
-        fontSize: Settings.fontSize.font_10,
-        alignment: "center",
-      },
-      {
-        text: row.abono,
-        fontSize: Settings.fontSize.font_10,
-        alignment: "center",
-      },
-    ];
-  });
-
   const docDefinitions = {
+    title: "some name",
     defaultStyle: { font: "LiberationSerif", color: "#012030" },
-    pageSize: Settings.pageSize,
-    pageMargins: Settings.pageMargins,
+    pageSize: settings.pageSize,
+    pageMargins: settings.pageMargins,
     header: [tableHeader(head)],
-    content: [mainContent(bodyRows), TABLE_FOOTER],
+    content: [mainContent(body), TABLE_FOOTER],
     // footer: [rodape],
   };
 
