@@ -97,6 +97,82 @@ body {
   .input-time {
     width: 85%; }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75); }
+
+.modal {
+  position: fixed;
+  top: 20vh;
+  left: 5%;
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30; }
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 20%;
+  overflow: hidden;
+  background-color: #ececec;
+  top: 35%;
+  left: 36%; }
+  .loading__header {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 0 0 1.4rem rgba(0, 0, 0, 0.35);
+    animation: bounce 1.4s ease infinite; }
+  .loading__bar {
+    width: 22rem;
+    height: 0.2rem;
+    display: block;
+    margin: 2.8rem auto;
+    border-radius: 0.2rem;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; }
+    .loading__bar:before {
+      content: "";
+      height: 0.3rem;
+      width: 6.8rem;
+      position: absolute;
+      transform: translate(-3.4rem, 0);
+      background-color: #00c46a;
+      border-radius: 0.2rem;
+      animation: animationLoading 1.4s infinite ease; }
+
+@keyframes animationLoading {
+  0% {
+    left: 0; }
+  50% {
+    left: 100%; }
+  100% {
+    left: 0; } }
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2); }
+  50% {
+    transform: scale(0.9);
+    text-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.2); }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2); } }
+
 .main-container {
   width: 95vw;
   height: 92vh;

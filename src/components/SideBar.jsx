@@ -1,4 +1,5 @@
 import { useState, useRef, useContext } from "react";
+import LoadingScreem from "../components/UI/LoadingScreem";
 import FolhaContext from "../context/folhaContext.js";
 import { GiNotebook } from "react-icons/gi";
 import { getCurrentDate, getUrlToFetch } from "../Helpers/helpers";
@@ -39,44 +40,47 @@ const SideBar = props => {
   };
 
   return (
-    <aside className={classes["aside"]}>
-      <header className={classes["aside-header"]}>
-        <span className={classes["aside-header--logo"]}>
-          <GiNotebook />
-        </span>
-        <h1 className={classes["aside-header--text"]}>Frequência Fácil</h1>
-      </header>
-      <main className={classes["aside-main"]}>
-        <form
-          onSubmit={onClickCarregarHandler}
-          className={classes["aside-main-form"]}
-        >
-          <fieldset className={classes["aside-main-fieldset"]}>
-            <legend>
-              <label htmlFor="input-date">Selecione o Período(mês/ano)</label>
-            </legend>
-            <input
-              className={classes["aside-main-fieldset--input"]}
-              ref={selectedDateRef}
-              type="month"
-              id="input-date"
-              defaultValue={`${getCurrentDate().year}-${
-                getCurrentDate().month
-              }`}
-              required
-            />
-            <button type="submit">Carregar Frequência</button>
-          </fieldset>
-        </form>
-        <button onClick={props.onClickPreencher} type="button">
-          Preencher
-        </button>
-        <button onClick={gerarPdfHandler} type="button">
-          Gerar
-        </button>
-      </main>
-      <footer className={classes["aside-footer"]}>Footer</footer>
-    </aside>
+    <>
+      {true && <LoadingScreem />}
+      <aside className={classes["aside"]}>
+        <header className={classes["aside-header"]}>
+          <span className={classes["aside-header--logo"]}>
+            <GiNotebook />
+          </span>
+          <h1 className={classes["aside-header--text"]}>Frequência Fácil</h1>
+        </header>
+        <main className={classes["aside-main"]}>
+          <form
+            onSubmit={onClickCarregarHandler}
+            className={classes["aside-main-form"]}
+          >
+            <fieldset className={classes["aside-main-fieldset"]}>
+              <legend>
+                <label htmlFor="input-date">Selecione o Período(mês/ano)</label>
+              </legend>
+              <input
+                className={classes["aside-main-fieldset--input"]}
+                ref={selectedDateRef}
+                type="month"
+                id="input-date"
+                defaultValue={`${getCurrentDate().year}-${
+                  getCurrentDate().month
+                }`}
+                required
+              />
+              <button type="submit">Carregar Frequência</button>
+            </fieldset>
+          </form>
+          <button onClick={props.onClickPreencher} type="button">
+            Preencher
+          </button>
+          <button onClick={gerarPdfHandler} type="button">
+            Gerar
+          </button>
+        </main>
+        <footer className={classes["aside-footer"]}>Footer</footer>
+      </aside>
+    </>
   );
 };
 
