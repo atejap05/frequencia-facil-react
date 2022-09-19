@@ -5,7 +5,7 @@ const IframePDF = props => {
     <iframe
       className={classes.iframe}
       src={props.src}
-      title="folha-de-ponto"
+      title={"folha-de-ponto"}
     ></iframe>
   );
 };

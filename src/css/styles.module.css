@@ -127,7 +127,8 @@ body {
   overflow: hidden;
   background-color: #ececec;
   top: 35%;
-  left: 36%; }
+  left: 36%;
+  animation: opening 0.3s; }
   .loading__header {
     font-size: 1.6rem;
     font-weight: 500;
@@ -153,6 +154,14 @@ body {
       background-color: #00c46a;
       border-radius: 0.2rem;
       animation: animationLoading 1.4s infinite ease; }
+
+@keyframes opening {
+  0% {
+    opacity: 0;
+    transform: scale(0.5); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
 
 @keyframes animationLoading {
   0% {
